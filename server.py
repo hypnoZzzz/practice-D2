@@ -99,7 +99,7 @@ if os.environ.get("APP_LOCATION") == "heroku":
     run(
         host="0.0.0.0",
         port=int(os.environ.get("PORT", 5000)),
-        server="waitress",
+        server="gunicorn",
         workers=3,
     )
 else:
