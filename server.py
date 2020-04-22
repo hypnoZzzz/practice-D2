@@ -12,9 +12,9 @@ sentry_sdk.init(
     integrations=[BottleIntegration()]
 )
 
-app = Bottle()
 
-@app.route("/")
+
+@route("/")
 def hello():
     html = """
         <!doctype html>
@@ -32,7 +32,7 @@ def hello():
     return html
 
 
-@app.route("/success")
+@route("/success")
 def index():
     html = """
     <!doctype html>
@@ -50,7 +50,7 @@ def index():
     return html
 
 
-@app.route("/fail")
+@route("/fail")
 
 def generate_fails():
     formatter = logging.Formatter("%(asctime)s %(levelname)s %(name)s %(message)s")
@@ -103,7 +103,7 @@ if os.environ.get("APP_LOCATION") == "heroku":
         workers=3,
     )
 else:
-    app.run(host="localhost", port=8090, debug=True)
+    run(host="localhost", port=8090, debug=True)
 
 
 
