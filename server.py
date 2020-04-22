@@ -25,6 +25,7 @@ def hello():
           <body>
             <div class="container">
               <h1>Hello, world!</h1>
+              <p class="small">пожалуйста, перейдите по <a href="/success">"/success"</a> или <a href="/fail">"/fail"</a></p>
             </div>
           </body>
         </html>
